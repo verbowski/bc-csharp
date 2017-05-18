@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == 'Any CPU' ">AnyCPU</Platform>
@@ -10,7 +10,8 @@
     <OutputType>Library</OutputType>
     <RootNamespace>Org.BouncyCastle</RootNamespace>
     <AssemblyName>BouncyCastle</AssemblyName>
-    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -22,6 +23,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <Optimize>true</Optimize>
@@ -33,6 +35,7 @@
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
     <NoWarn>1591</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
     <SignAssembly>true</SignAssembly>
@@ -550,6 +553,30 @@
     <Compile Include="src\bcpg\sig\SignatureExpirationTime.cs" />
     <Compile Include="src\bcpg\sig\SignerUserId.cs" />
     <Compile Include="src\bcpg\sig\TrustSignature.cs" />
+    <Compile Include="src\cert\CertException.cs" />
+    <Compile Include="src\cert\CertIOException.cs" />
+    <Compile Include="src\cert\CertUtils.cs" />
+    <Compile Include="src\cert\cmp\ClassCastException.cs" />
+    <Compile Include="src\cert\cmp\GeneralPkiMessage.cs" />
+    <Compile Include="src\cert\cmp\ProtectedPKIMessage.cs" />
+    <Compile Include="src\cert\cmp\ProtectedPkiMessageBuilder.cs" />
+    <Compile Include="src\cert\crmf\CertificateRequestMessage.cs" />
+    <Compile Include="src\cert\crmf\CertificateRequestMessageBuilder.cs" />
+    <Compile Include="src\cert\crmf\Control.cs" />
+    <Compile Include="src\cert\crmf\CRMFException.cs" />
+    <Compile Include="src\cert\crmf\CRMFRuntimeException.cs" />
+    <Compile Include="src\cert\crmf\CRMFUtil.cs" />
+    <Compile Include="src\cert\crmf\jcajce\CRMFHelper.cs" />
+    <Compile Include="src\cert\crmf\jcajce\JcePKMACValuesCalculator.cs" />
+    <Compile Include="src\cert\crmf\OperatorCreationException.cs" />
+    <Compile Include="src\cert\crmf\PKMACBuilder.cs" />
+    <Compile Include="src\cert\crmf\PKMACValueGenerator.cs" />
+    <Compile Include="src\cert\crmf\PKMACValuesCalculator.cs" />
+    <Compile Include="src\cert\crmf\PKMACValueVerifier.cs" />
+    <Compile Include="src\cert\crmf\ProofOfPossessionSigningKeyBuilder.cs" />
+    <Compile Include="src\cert\crmf\RegTokenControl.cs" />
+    <Compile Include="src\cert\ParseException.cs" />
+    <Compile Include="src\cert\X509CertificateHolder.cs" />
     <Compile Include="src\cms\BaseDigestCalculator.cs" />
     <Compile Include="src\cms\CMSAttributeTableGenerationException.cs" />
     <Compile Include="src\cms\CMSAttributeTableGenerator.cs" />
@@ -1093,6 +1120,70 @@
     <Compile Include="src\crypto\tls\UseSrtpData.cs" />
     <Compile Include="src\crypto\tls\UserMappingType.cs" />
     <Compile Include="src\crypto\util\Pack.cs" />
+    <Compile Include="src\javax\crypto\AssertionError.cs" />
+    <Compile Include="src\javax\crypto\Cipher.cs" />
+    <Compile Include="src\javax\crypto\CipherSpi.cs" />
+    <Compile Include="src\javax\crypto\CloneNotSupportedException.cs" />
+    <Compile Include="src\javax\crypto\CryptoPermission.cs" />
+    <Compile Include="src\javax\crypto\CryptoPermissions.cs" />
+    <Compile Include="src\javax\crypto\JCESecurity.cs" />
+    <Compile Include="src\javax\crypto\JCEUtil.cs" />
+    <Compile Include="src\javax\crypto\Mac.cs" />
+    <Compile Include="src\javax\crypto\MacSpi.cs" />
+    <Compile Include="src\javax\crypto\NoSuchElementException.cs" />
+    <Compile Include="src\javax\crypto\NoSuchPaddingException.cs" />
+    <Compile Include="src\javax\crypto\ReadOnlyBufferException.cs" />
+    <Compile Include="src\java\security\AccessControlContext.cs" />
+    <Compile Include="src\java\security\AccessController.cs" />
+    <Compile Include="src\java\security\AlgorithmParameters.cs" />
+    <Compile Include="src\java\security\AlgorithmParametersSpi.cs" />
+    <Compile Include="src\java\security\AllPermission.cs" />
+    <Compile Include="src\java\security\cert\Certificate.cs" />
+    <Compile Include="src\java\security\cert\CertificateEncodingException.cs" />
+    <Compile Include="src\java\security\cert\CertificateException.cs" />
+    <Compile Include="src\java\security\cert\CRLException.cs" />
+    <Compile Include="src\java\security\ClassNotFoundException.cs" />
+    <Compile Include="src\java\security\CodeSource.cs" />
+    <Compile Include="src\java\security\DomainCombiner.cs" />
+    <Compile Include="src\java\security\GeneralSecurityException.cs" />
+    <Compile Include="src\java\security\IllegalStateException.cs" />
+    <Compile Include="src\java\security\InvalidAlgorithmParameterException.cs" />
+    <Compile Include="src\java\security\JavaSecurityAccess.cs" />
+    <Compile Include="src\java\security\Key.cs" />
+    <Compile Include="src\java\security\Locale.cs" />
+    <Compile Include="src\java\security\NoSuchAlgorithmException.cs" />
+    <Compile Include="src\java\security\NoSuchProviderException.cs" />
+    <Compile Include="src\java\security\NullPointerException.cs" />
+    <Compile Include="src\java\security\Permission.cs" />
+    <Compile Include="src\java\security\PermissionCollection.cs" />
+    <Compile Include="src\java\security\Permissions.cs" />
+    <Compile Include="src\java\security\Policy.cs" />
+    <Compile Include="src\java\security\PolicySpi.cs" />
+    <Compile Include="src\java\security\Principal.cs" />
+    <Compile Include="src\java\security\PrivilegedAction.cs" />
+    <Compile Include="src\java\security\PrivilegedExceptionAction.cs" />
+    <Compile Include="src\java\security\ProtectionDomain.cs" />
+    <Compile Include="src\java\security\Provider.cs" />
+    <Compile Include="src\java\security\RuntimeException.cs" />
+    <Compile Include="src\java\security\RuntimePermission.cs" />
+    <Compile Include="src\java\security\Security.cs" />
+    <Compile Include="src\java\security\SecurityConstants.cs" />
+    <Compile Include="src\java\security\SecurityManager.cs" />
+    <Compile Include="src\java\security\SecurityUtil.cs" />
+    <Compile Include="src\java\security\SharedSecrets.cs" />
+    <Compile Include="src\java\security\spec\AlgorithmParameterSpec.cs" />
+    <Compile Include="src\java\security\spec\InvalidParameterSpecException.cs" />
+    <Compile Include="src\java\security\System.cs" />
+    <Compile Include="src\java\util\Collection.cs" />
+    <Compile Include="src\java\util\Iterator.cs" />
+    <Compile Include="src\java\util\List.cs" />
+    <Compile Include="src\java\util\ListIterator.cs" />
+    <Compile Include="src\java\util\Properties.cs" />
+    <Compile Include="src\java\util\Set.cs" />
+    <Compile Include="src\jcajce\util\DefaultJcaJceHelper.cs" />
+    <Compile Include="src\jcajce\util\JcaJceHelper.cs" />
+    <Compile Include="src\jcajce\util\NamedJcaJceHelper.cs" />
+    <Compile Include="src\jcajce\util\ProviderJcaJceHelper.cs" />
     <Compile Include="src\math\BigInteger.cs" />
     <Compile Include="src\math\Primes.cs" />
     <Compile Include="src\math\ec\ECAlgorithms.cs" />
@@ -1273,6 +1364,7 @@
     <Compile Include="src\ocsp\SingleResp.cs" />
     <Compile Include="src\ocsp\UnknownStatus.cs" />
     <Compile Include="src\openpgp\IStreamGenerator.cs" />
+    <Compile Include="src\openpgp\operator\jcajce\OperatorHelper.cs" />
     <Compile Include="src\openpgp\PGPKeyRing.cs" />
     <Compile Include="src\openpgp\PGPObject.cs" />
     <Compile Include="src\openpgp\PGPUserAttributeSubpacketVectorGenerator.cs" />
@@ -1324,6 +1416,15 @@
     <Compile Include="src\openssl\PEMWriter.cs" />
     <Compile Include="src\openssl\PasswordException.cs" />
     <Compile Include="src\openssl\Pkcs8Generator.cs" />
+    <Compile Include="src\operator\ContentSigner.cs" />
+    <Compile Include="src\operator\ContentVerifier.cs" />
+    <Compile Include="src\operator\ContentVerifierProvider.cs" />
+    <Compile Include="src\operator\DefaultSignatureAlgorithmIdentifierFinder.cs" />
+    <Compile Include="src\operator\GenericKey.cs" />
+    <Compile Include="src\operator\jcajce\JcaContentSignerBuilder.cs" />
+    <Compile Include="src\operator\MacCalculator.cs" />
+    <Compile Include="src\operator\OperatorStreamException.cs" />
+    <Compile Include="src\operator\SignatureAlgorithmIdentifierFinder.cs" />
     <Compile Include="src\pkcs\AsymmetricKeyEntry.cs" />
     <Compile Include="src\pkcs\EncryptedPrivateKeyInfoFactory.cs" />
     <Compile Include="src\pkcs\PKCS12StoreBuilder.cs" />
@@ -1508,5 +1609,6 @@
     <None Include="Readme.html" />
     <None Include="checklist.txt" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
